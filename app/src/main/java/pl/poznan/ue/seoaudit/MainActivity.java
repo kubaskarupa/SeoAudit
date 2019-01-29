@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
+import static pl.poznan.ue.seoaudit.AnalizedFields.*;
+
 public class MainActivity extends Activity {
 
     Button b1;
@@ -22,10 +26,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initInstance();
+        addToFields("created on " + Calendar.getInstance().getTime().toString());
 
         b1=(Button)findViewById(R.id.submitButton);
         t1=(TextView)findViewById(R.id.textView);
-    //    createReportButton=(Button)findViewById(R.id.)
+    //todo:    createReportButton=(Button)findViewById(R.id.<IDNOWEGOPRZYCISKU>)
         Click();
     }
 
@@ -41,7 +47,7 @@ public class MainActivity extends Activity {
     }
 
 
-    private void getReport(){
+    private void getReport(){ //todo: tworzy plik ze stworzonych wskazówek - pola OneLongString - i zapisuje jako txt
         createReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +62,8 @@ public class MainActivity extends Activity {
 
 
 
+
         setContentView(R.layout.after_analyze);
-        //dodać konkatenację listy Stringów do pola tekstowego w nowym widoku
+        //todo: dodać konkatenację listy Stringów do pola tekstowego w nowym widoku
     }
 }

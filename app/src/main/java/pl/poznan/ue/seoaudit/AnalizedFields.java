@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class AnalizedFields {
     private static AnalizedFields instance;
-    private ArrayList<String> fields;
-    private String OneLongString;
+    private static ArrayList<String> fields;
+    private static String OneLongString;
 
 
     private AnalizedFields(){};
 
-    public void initInstance(){
+    public static void initInstance(){
         if (instance == null){
             instance = new AnalizedFields();
         }
@@ -20,11 +20,11 @@ public class AnalizedFields {
         return instance;
     }
 
-    public void addToFields(String toAdd){
+    public static void addToFields(String toAdd){
         fields.add(toAdd);
     }
 
-    public String getOneLongString(){
+    public static String getOneLongString(){
         for (int i = 0; i <= fields.lastIndexOf(fields); i++){
             OneLongString = OneLongString + fields.get(i) + "\n";
         }
