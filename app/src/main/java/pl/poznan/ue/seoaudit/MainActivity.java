@@ -2,6 +2,7 @@ package pl.poznan.ue.seoaudit;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ public class MainActivity extends Activity {
 
     Button b1;
     TextView t1;
+    TextInputLayout textInputLayout;
     String url;
     String buttonText = "submit";
     String textViewText = "Input url to analyze";
@@ -28,8 +30,15 @@ public class MainActivity extends Activity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                url = t1.getText().toString();
+                url = textInputLayout.getEditText().getText().toString();
+                analyzeUrl(url);
             }
         });
+
+    }
+
+
+    private void analyzeUrl(String url) {
+
     }
 }
