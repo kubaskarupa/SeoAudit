@@ -11,6 +11,8 @@ public class MainActivity extends Activity {
     Button b1;
     TextView t1;
     String url;
+    String buttonText = "submit";
+    String textViewText = "Input url to analyze";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
