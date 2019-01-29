@@ -10,9 +10,11 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
     Button b1;
+    Button createReportButton;
     TextView t1;
     TextInputLayout textInputLayout;
     String url;
+    String reportButtonText = "create report";
     String buttonText = "submit";
     String textViewText = "Input url to analyze";
 
@@ -23,6 +25,7 @@ public class MainActivity extends Activity {
 
         b1=(Button)findViewById(R.id.submitButton);
         t1=(TextView)findViewById(R.id.textView);
+    //    createReportButton=(Button)findViewById(R.id.)
         Click();
     }
 
@@ -38,7 +41,21 @@ public class MainActivity extends Activity {
     }
 
 
+    private void getReport(){
+        createReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+
     private void analyzeUrl(String url) {
 
+
+
+
+        setContentView(R.layout.after_analyze);
     }
 }
