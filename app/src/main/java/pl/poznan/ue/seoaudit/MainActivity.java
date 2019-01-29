@@ -57,5 +57,6 @@ public class MainActivity extends Activity {
 
 
         setContentView(R.layout.after_analyze);
+        //dodać konkatenację listy Stringów do pola tekstowego w nowym widoku
     }
 }
