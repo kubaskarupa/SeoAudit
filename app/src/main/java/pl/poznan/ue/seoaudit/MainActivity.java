@@ -16,11 +16,13 @@ public class MainActivity extends Activity {
     Button b1;
     Button createReportButton;
     TextView t1;
+    TextView reportTextView;
     TextInputLayout textInputLayout;
     String url;
     String reportButtonText = "create report";
     String buttonText = "submit";
     String textViewText = "Input url to analyze";
+    String reportText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,9 @@ public class MainActivity extends Activity {
 
         b1=(Button)findViewById(R.id.submitButton);
         t1=(TextView)findViewById(R.id.textView);
-    //todo:    createReportButton=(Button)findViewById(R.id.<IDNOWEGOPRZYCISKU>)
+        createReportButton=(Button)findViewById(R.id.createReportButton);
+        reportTextView=(TextView)findViewById(R.id.reportTextView);
+
         Click();
     }
 
@@ -54,6 +58,7 @@ public class MainActivity extends Activity {
 
             }
         });
+
     }
 
 
@@ -64,6 +69,8 @@ public class MainActivity extends Activity {
 
 
         setContentView(R.layout.after_analyze);
-        //todo: dodać konkatenację listy Stringów do pola tekstowego w nowym widoku
+        reportTextView.setText(getOneLongString());
+
+
     }
 }
