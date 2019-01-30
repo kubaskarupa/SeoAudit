@@ -30,4 +30,12 @@ public class AnalizedFields {
         }
         return OneLongString;
     }
+
+    public static String checkhttps(String url){
+        if (url.substring(1, 5).toLowerCase() == "https"){
+            return "HTTPS detected, check your certificate";
+        }else{
+            return "HTTPS not detected, consider using HTTPS";
+        }
+    }
 }

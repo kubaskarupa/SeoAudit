@@ -73,10 +73,11 @@ public class MainActivity extends Activity {
 
     private void analyzeUrl(String url) {
 
-
-
-
         addToFields("Analized url is: "+ url+"\n");
+
+        addToFields(checkhttps(url));
+
+
         setContentView(R.layout.after_analyze);
         createReportButton=(Button)findViewById(R.id.createReportButton);
         reportTextView=(TextView)findViewById(R.id.reportTextView);
