@@ -1,6 +1,7 @@
 package pl.poznan.ue.seoaudit;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 
 import static pl.poznan.ue.seoaudit.AnalizedFields.*;
@@ -31,6 +36,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initInstance();
         addToFields("created on " + Calendar.getInstance().getTime().toString());
+
+
 
 
         b1=(Button)findViewById(R.id.submitButton);
@@ -76,5 +83,30 @@ public class MainActivity extends Activity {
         reportTextView.setText(getOneLongString());
 
 
+
+    }
+
+
+    private void saveReportToFile(){
+        Context context = getApplicationContext();
+        File path = context.getFilesDir();
+        File file = new File(path, "report "+Calendar.getInstance().getTime().toString().substring(5, 19)+".txt");
+        FileOutputStream stream = null;
+        try {
+            stream = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            stream.write(getOneLongString().getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
