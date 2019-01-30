@@ -36,8 +36,7 @@ public class MainActivity extends Activity {
         b1=(Button)findViewById(R.id.submitButton);
         t1=(TextView)findViewById(R.id.textView);
         textInputLayout=(EditText)findViewById(R.id.editText2);
-        createReportButton=(Button)findViewById(R.id.createReportButton);
-        reportTextView=(TextView)findViewById(R.id.reportTextView);
+
 
         Click();
     }
@@ -48,7 +47,6 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 url = textInputLayout.getText().toString();
                 analyzeUrl(url);
-                addToFields("Analized url is: "+ url);
             }
         });
 
@@ -71,8 +69,10 @@ public class MainActivity extends Activity {
 
 
 
-
+        addToFields("Analized url is: "+ url+"\n");
         setContentView(R.layout.after_analyze);
+        createReportButton=(Button)findViewById(R.id.createReportButton);
+        reportTextView=(TextView)findViewById(R.id.reportTextView);
         reportTextView.setText(getOneLongString());
 
 
