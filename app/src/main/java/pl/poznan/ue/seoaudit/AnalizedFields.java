@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class AnalizedFields {
     private static AnalizedFields instance;
-    private static ArrayList<String> fields;
-    private static String OneLongString;
+    private static ArrayList<String> fields = new ArrayList<String>();
+    private static String OneLongString = new String();
 
 
     private AnalizedFields(){};
@@ -25,7 +25,7 @@ public class AnalizedFields {
     }
 
     public static String getOneLongString(){
-        for (int i = 0; i <= fields.lastIndexOf(fields); i++){
+        for (int i = 0; i <= fields.size(); i++){
             OneLongString = OneLongString + fields.get(i) + "\n";
         }
         return OneLongString;

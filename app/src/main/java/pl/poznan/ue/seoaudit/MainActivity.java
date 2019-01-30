@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
     Button createReportButton;
     TextView t1;
     TextView reportTextView;
-    TextInputLayout textInputLayout;
+    EditText textInputLayout;
     String url;
     String reportButtonText = "create report";
     String buttonText = "submit";
@@ -31,8 +32,10 @@ public class MainActivity extends Activity {
         initInstance();
         addToFields("created on " + Calendar.getInstance().getTime().toString());
 
+
         b1=(Button)findViewById(R.id.submitButton);
         t1=(TextView)findViewById(R.id.textView);
+        textInputLayout=(EditText)findViewById(R.id.editText2);
         createReportButton=(Button)findViewById(R.id.createReportButton);
         reportTextView=(TextView)findViewById(R.id.reportTextView);
 
@@ -43,8 +46,9 @@ public class MainActivity extends Activity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                url = textInputLayout.getEditText().getText().toString();
+                url = textInputLayout.getText().toString();
                 analyzeUrl(url);
+                addToFields("Analized url is: "+ url);
             }
         });
 
