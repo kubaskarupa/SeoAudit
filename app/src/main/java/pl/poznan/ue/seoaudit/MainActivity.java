@@ -60,11 +60,11 @@ public class MainActivity extends Activity {
     }
 
 
-    private void getReport(){ //todo: tworzy plik ze stworzonych wskazówek - pola OneLongString - i zapisuje jako txt
+    private void getReport(){
         createReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                saveReportToFile();
             }
         });
 
@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
 
     private void analyzeUrl(String url) {
 
-        addToFields("Analized url is: "+ url+"\n");
+        addToFields("Analized url is: "+ url);
 
         addToFields(checkhttps(url));
 
@@ -82,6 +82,7 @@ public class MainActivity extends Activity {
         createReportButton=(Button)findViewById(R.id.createReportButton);
         reportTextView=(TextView)findViewById(R.id.reportTextView);
         reportTextView.setText(getOneLongString());
+        getReport();
 
 
 
