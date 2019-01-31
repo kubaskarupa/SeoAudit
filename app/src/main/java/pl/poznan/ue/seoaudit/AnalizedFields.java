@@ -33,7 +33,7 @@ public class AnalizedFields {
 
     public static String checkhttps(String url){
         if (url.length()>5){
-        if (url.substring(0,5).toUpperCase() == "HTTPS" ){
+        if (url.substring(0,5).toUpperCase().equals("HTTPS")  ){
             return "HTTPS detected, check your certificate";
         }} else{
             return "HTTPS not detected, consider using HTTPS";
